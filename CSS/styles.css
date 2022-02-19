@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*Custom properties*/
+:root {
+
+   --ff-primary: 'Redressed', cursive;
+   --ff-secondary: 'Fira Sans Condensed', sans-serif;
+
+   --fw-reg: 300;
+   --fw-bold: 900;
+
+   --clr-light: #fff;
+   --clr-dark: #202020;
+   --clr-accent: #16e0bd;
+
+   --fs-h1: 3rem;
+   --fs-h2: 2.5rem;
+   --fs-h3: 1.5rem;
+   --fs-body: 1rem;
+   
+   --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25)
+        /* 0.125em 0.125em 0.35em rgba(0,0,0,0.125);*/
+   
+}
+
+@media (min-width: 800px) {
+  :root{
+    --fs-h1: 3rem;
+   --fs-h2: 2.5rem;
+   --fs-h3: 1.5rem;
+   --fs-body: 1rem;
+  }
+}
+
+/*General styles*/
+
+body{
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+section{
+  padding: 3em 2em;
+}
+
+img{
+  display: block;
+  max-width: 50%;
+}
+
+/*Typography*/
+
+strong{font-weight: var(--fw-bold);}
+
+h1,
+h2,
+h3{
+  line-height: 1.5;
+  margin:0%;
+}
+
+h1{font-size: var(--fs-h1);}
+h2{font-size: var(--fs-h2);}
+h3{font-size: var(--fs-h3);}
+
+
+.section_title{
+  margin-bottom: .25em;
+
+}
+
+.section_title-intro{
+  font-weight: var(--fw-reg);
+}
+
+
+
+.section_subtitle{
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.section_subtitle-intro,
+.section_subtitle-about{
+  background:var(--clr-accent);
+  padding: .25em 1em;
+  font-family: var(--ff-secondary);
+  margin-bottom: 1em;
+}
+
+/*Headr*/
+
+nav{display: none;}
+
+/*Intro*/
+
+.intro{
+  position: relative;
+}
+
+.intro_img{
+  box-shadow: var(--bs);
+}
+
+.section_subtitle-intro{
+  display: inline-block;
+}
+
+@media (min-width: 600px){
+  .intro{
+    display: grid;
+    width:min-content;
+    margin: 0 auto;
+    grid-column-gap: 1mm;
+    grid-template-areas: 
+    "img title"
+    "img subtitle";
+    grid-template-columns: min-content max-content;
+  }
+
+  .intro_img{
+    min-width: 300px;
+    grid-area: img;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section_subtitle-intro{
+    align-self: start;
+    grid-column: -1/1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% - 1em);
+
+
+  }
+}
+
+
+
+/*Things I Do*/
+.ThingsIdo{
+  background-color: var(--clr-dark);
+  color:var(--clr-light);
+  background-image:url(../Images/background-1.png) ;
+  background-size: cover;
+  text-align: center;
+  
+}
+
+.section_title-things{
+  color: var(--clr-accent);
+  position: relative;
+
+}
+.section_title-things::after{
+  content: '';
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-accent);
+  opacity: 50%;
+}
+
+.thing{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media(min-width: 800px){
+  .things{
+    display: flex;
+    max-width: 1250px;
+    margin: 0 0 0;
+
+  }
+
+  .thing + .thing{
+    margin-left: 3em;
+  }
+}
+
+
+
+
+
+
+
+
